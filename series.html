@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loraflix - Séries</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="series-page-bg">
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">LORA<span>FLIX</span></div>
+            <ul class="nav-links">
+                <li><a href="index.php">INÍCIO</a></li>
+                <li><a href="filmes.html">FILMES</a></li>
+                <li><a href="series.html" class="active">SÉRIES</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="movie-page-container">
+        <!-- Ingressos Decorativos (Bege) -->
+        <div class="ticket ticket-left"></div>
+        <div class="ticket ticket-bottom-right"></div>
+        
+        <!-- Estrela Decorativa (Opcional se tiver a imagem) -->
+        <div class="star-decor"></div>
+
+        <h1 class="series-main-title">TEEN WOLF</h1>
+
+        <div class="info-grid">
+            
+            <!-- Coluna 1: Sinopse -->
+            <div class="info-column">
+                <div class="label-ribbon">Sinopse :</div>
+                <div class="card-series">
+                    <p>Scott McCall, um adolescente desajeitado, se transforma em lobisomem após ser mordido por um um dia antes do início do segundo ano do ensino médio. Ele precisa aprender a se adaptar à sua nova identidade enquanto lida com a vida de adolescente.</p>
+                </div>
+            </div>
+
+            <!-- Coluna 2: Trailer e Duração -->
+            <div class="info-column">
+                <div class="label-ribbon">Trailer :</div>
+                <div class="video-frame-series">
+                    <iframe src="https://www.youtube.com" frameborder="0" allowfullscreen></iframe>
+                </div>
+                
+                <div class="duration-box">
+                    <h3 class="label-no-bg">Duração :</h3>
+                    <p class="duration-text">6 temporadas</p>
+                </div>
+
+                <!-- Adicione isso dentro da tag <main>, logo abaixo da duration-box -->
+<div class="seasons-container">
+    <h3 class="label-no-bg">Temporadas :</h3>
+    <div class="seasons-tabs">
+        <button class="season-btn active">T1</button>
+        <button class="season-btn">T2</button>
+        <button class="season-btn">T3</button>
+        <button class="season-btn">T4</button>
+        <button class="season-btn">T5</button>
+        <button class="season-btn">T6</button>
+    </div>
+</div>
+
+<!-- Botão Flutuante de Próximo Episódio -->
+<div class="next-episode-float">
+    <a href="#" class="btn-next">
+        <span>PRÓXIMO EPISÓDIO</span>
+        <i class="arrow-right">▶</i>
+    </a>
+</div>
+
+            </div>
+
+            <!-- Coluna 3: Elenco -->
+            <div class="info-column">
+                <div class="label-ribbon">Elenco :</div>
+                <div class="card-series">
+                    <ul class="cast-list-series">
+                        <li><strong>Tyler Posey</strong> como Scott McCall</li>
+                        <li><strong>Dylan O'Brien</strong> como Stiles Stilinski</li>
+                        <li><strong>Tyler Hoechlin</strong> como Derek Hale</li>
+                        <li><strong>Crystal Reed</strong> como Allison Argent</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

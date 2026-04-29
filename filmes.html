@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loraflix - Filmes</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="detalhes-bg">
+
+    <!-- Menu de Navegação -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">LORA<span>FLIX</span></div>
+            <ul class="nav-links">
+                <li><a href="index.php">INÍCIO</a></li>
+                <li><a href="filmes.html" class="active">FILMES</a></li>
+                <li><a href="series.html">SÉRIES</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="movie-page-container">
+        <!-- Ingressos Decorativos nos Cantos -->
+        <div class="ticket ticket-left"></div>
+        <div class="ticket ticket-right"></div>
+
+        <!-- Título Principal -->
+        <h1 class="main-title">UM ROMANCE DO ALÉM</h1>
+
+        <!-- Grade de Informações (3 Colunas) -->
+        <div class="info-grid">
+            
+            <!-- Coluna 1: Sinopse -->
+            <div class="info-column">
+                <span class="pill-label">Sinopse :</span>
+                <div class="card-vinho">
+                    <p>Após encontrar um envelope estranho, a vida do policial Ming-Han toma um rumo sinistro. Agora ele está casado com um fantasma e os dois precisam resolver um crime.</p>
+                </div>
+            </div>
+
+            <!-- Coluna 2: Trailer e Duração -->
+            <div class="info-column">
+                <span class="pill-label">Trailer :</span>
+                <div class="video-frame">
+                    <iframe
+                         src="https://youtu.be/BCFyt7GkOmY"
+                         title="Trailer"
+                         frameborder="0
+                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                         allowfullscreen
+                    ></iframe>
+                </div>
+                
+                <div class="duration-box">
+                    <span class="pill-label">Duração :</span>
+                    <p class="time-text">2h9min</p>
+                </div>
+            </div>
+
+            <!-- Coluna 3: Elenco -->
+            <div class="info-column">
+                <span class="pill-label">Elenco :</span>
+                <div class="card-vinho">
+                    <ul class="cast-list">
+                        <li><strong>Greg Hsu</strong> como Wu Ming-han</li>
+                        <li><strong>Austin Lin</strong> como Mao Pang-yu</li>
+                        <li><strong>Gingle Wang</strong> como Lin Tzu-ching</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
