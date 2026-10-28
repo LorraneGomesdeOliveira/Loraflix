@@ -18,3 +18,6 @@ reduzido.
 
 - `php -l` executado em todos os arquivos PHP do projeto: sem erros de sintaxe.
 - `git diff --check`: sem erros de whitespace.
+- No navegador, o layout se ajustou a um viewport estreito (312 px efetivos),
+  sem rolagem horizontal; navegação em linhas, grade em uma coluna e foco de
+  teclado visível foram confirmados.
