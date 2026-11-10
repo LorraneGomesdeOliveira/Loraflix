@@ -2,11 +2,18 @@
 session_start();
 require_once 'bd.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
+if (isset($_SESSION['usuario'])) {
+    header('Location: index.php');
+    exit;
+}
 
-    $sql = "SELECT * FROM usuarios WHERE email = ?";
+$erro = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = trim($_POST['email'] ?? '');
+    $senha = $_POST['senha'] ?? '';
+
+    $sql = 'SELECT * FROM usuarios WHERE email = ?';
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$email]);
 
@@ -14,44 +21,55 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($usuario && password_verify($senha, $usuario['senha'])) {
         $_SESSION['usuario'] = $usuario['username'];
+        $_SESSION['usuario_email'] = $usuario['email'];
+        $_SESSION['usuario_id'] = (int)$usuario['id'];
 
-        header("Location: index.php");
+        header('Location: index.php');
         exit;
-    } else {
-        $erro = "Email ou senha inválidos";
     }
+
+    $erro = 'Email ou senha inválidos.';
 }
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Loraflix</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-box">
+            <h1 class="login-title">Login</h1>
 
-<h2>Login</h2>
-<div class="login-container">
-    <div class="login-box">
-        <h1 class="login-title">Login</h1>
-        <form method="POST">
-            <div class="form-group">
-                <label class="form-label">E-mail :</label>
-                <input type="email" name="email" class="form-input" placeholder="">         
-</div>
-<?php if(isset($erro)) echo "<p>$erro</p>"; ?>
-            <div class="form-group">
-                <label class="form-label">Senha :</label>
-                <input type="password" name="senha" class="form-input" placeholder="">
+            <?php if (!empty($erro)): ?>
+                <p class="login-link" style="color: #f2e3c9; margin-bottom: 15px;">
+                    <?= htmlspecialchars($erro) ?>
+                </p>
+            <?php endif; ?>
+
+            <form method="POST">
+                <div class="form-group">
+                    <label class="form-label">E-mail :</label>
+                    <input type="email" name="email" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Senha :</label>
+                    <input type="password" name="senha" class="form-input" required>
+                </div>
+
+                <button type="submit" class="btn-login">Entrar</button>
+            </form>
+
+            <div class="login-link">
+                <p>Não tem conta? <a href="cadastro.php">Criar conta</a></p>
             </div>
-            <button type="submit" class="btn-login">Entrar</button>
-        </form>
-        <div class="login-link">
-            <p>Não tem conta? <a href="cadastro.php">Criar conta</a></p>
         </div>
-    </div>      
-
+    </div>
 </body>
 </html>
 
